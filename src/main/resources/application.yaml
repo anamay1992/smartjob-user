@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: smart-job-api-user
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;IFEXISTS=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: sa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+pattern:
+  password:
+    regex: "^[A-Za-z0-9]{8,14}$"
+server:
+  servlet:
+    context-path: /smart-job-api-user
+secret:
+  pwdEncrypt: smartjob
+springdoc:
+  api-docs:
+    path: /api-docs
